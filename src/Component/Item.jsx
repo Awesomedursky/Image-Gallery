@@ -10,7 +10,7 @@ const Item = (props) => {
   };
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <div className='hover:scale-105 rounded-3xl overflow-clip bg-white drop-shadow-xl'>
+      <div className='hover:scale-105 hover:drop-shadow-[0_0_5px_red] rounded-3xl overflow-clip bg-white drop-shadow-xl transition-all duration-300'>
         <img src={props.image} alt={props.image} loading='lazy' className='w-full h-[10rem]' />
         <div className='px-3 py-2 xl'>{props.name}</div>
       </div>
