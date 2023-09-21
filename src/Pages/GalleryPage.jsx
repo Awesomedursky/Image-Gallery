@@ -22,7 +22,6 @@ const GalleryPage = () => {
         return arrayMove(images, activeIndex, overIndex);
       });
     }
-    console.log(e);
   };
 
   return (
@@ -36,20 +35,12 @@ const GalleryPage = () => {
             md:grid-cols-3 lg:grid-cols-4 gap-4'
           >
             <SortableContext items={filteredImages} strategy={verticalListSortingStrategy}>
-              {filteredImages.map((image) => (
-                <Item key={image.key} image={image}/>
+              {filteredImages.map((image, index) => (
+                <Item key={index} id={image} image={image.link} name={image.name} />
               ))}
             </SortableContext>
           </div>
         </DndContext>
-
-        {/* <DndContext collisionDetection={closestCenter} onDragEnd={handleDrag}>
-          <SortableContext items={filteredImages} strategy={verticalListSortingStrategy}>
-            {filteredImages.map((image) => (
-              <Item key={image.key} image={image} />
-            ))}
-          </SortableContext>
-        </DndContext> */}
       </div>
     </motion.div>
   );
